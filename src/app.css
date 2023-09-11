@@ -1,0 +1,319 @@
+/*!
+  * Milligram v1.4.1
+  * https://milligram.io
+  *
+  * Copyright (c) 2020 CJ Patoilo
+  * Licensed under the MIT license
+ */
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  color: #606060;
+  background: #fff;
+  font-family: "Lexend", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  max-width: 60em;
+  margin: auto;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #24283b;
+  }
+  body {
+    color: #c0caf5;
+    background: #24283b;
+  }
+
+  body a {
+    color: #7dcfff;
+  }
+  h2 {
+    color: #f7768e;
+  }
+  h3 {
+    color: #9ece6a;
+  }
+  h4 {
+    color: #bb9af7;
+  }
+}
+@page {
+  size: A4;
+  margin: 2cm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+blockquote {
+  border-left: 0.3rem solid #d1d1d1;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1rem 1.5rem;
+}
+
+blockquote *:last-child {
+  margin-bottom: 0;
+}
+
+code {
+  background: #f4f5f6;
+  border-radius: 0.4rem;
+  font-size: 86%;
+  margin: 0 0.2rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+pre {
+  background: #f4f5f6;
+  border-left: 0.3rem solid #9b4dca;
+  overflow-y: hidden;
+}
+
+pre > code {
+  border-radius: 0;
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+
+hr {
+  border: 0;
+  border-top: 0.1rem solid #f4f5f6;
+  margin: 3rem 0;
+}
+
+label,
+legend {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+#content {
+  margin: 0 auto;
+  max-width: 112rem;
+  padding: 0 2rem;
+  position: relative;
+  width: 100%;
+}
+
+a {
+  color: #9b4dca;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #606c76;
+}
+
+dl,
+ol,
+ul {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ol ol,
+ol ul,
+ul dl,
+ul ol,
+ul ul {
+  font-size: 90%;
+  margin: 1.5rem 0 1.5rem 3rem;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+ul {
+  list-style: circle inside;
+}
+
+dd,
+dt,
+li {
+  margin-bottom: 1rem;
+}
+
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul {
+  margin-bottom: 2.5rem;
+}
+
+table {
+  border-spacing: 0;
+  display: block;
+  overflow-x: auto;
+  text-align: left;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: 0.1rem solid #e1e1e1;
+  padding: 1.2rem 1.5rem;
+}
+
+td:first-child,
+th:first-child {
+  padding-left: 0;
+}
+
+td:last-child,
+th:last-child {
+  padding-right: 0;
+}
+
+@media (min-width: 40rem) {
+  table {
+    display: table;
+    overflow-x: initial;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  letter-spacing: -0.1rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 4.6rem;
+  line-height: 1.5;
+  padding-top: 4rem;
+  string-set: chapter_title content();
+}
+
+h1::after {
+}
+h2 {
+  font-size: 3.4rem;
+  line-height: 1.25;
+  padding-top: 4rem;
+}
+
+.outline-2 {
+  break-before: page;
+}
+.content :nth-child(1 of div.outline-2) {
+  break-before: auto;
+}
+
+#table-of-contents {
+  break-before: page;
+}
+h3 {
+  font-size: 2rem;
+  line-height: 1.3;
+  padding-top: 2rem;
+  break-after: avoid-page;
+}
+
+h4 {
+  font-size: 1.8rem;
+  letter-spacing: -0.08rem;
+  line-height: 1.25;
+  break-after: avoid-page;
+}
+
+h5 {
+  font-size: 1.8rem;
+  letter-spacing: -0.05rem;
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+/* .outline-4 { */
+/*   margin-left: 2rem; */
+/* } */
+/* .outline-text-4 { */
+/*   margin-left: 2rem; */
+/* } */
+img {
+  max-width: 100%;
+  display: block;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+@page :left {
+  @top-left {
+    content: string(chapter_title);
+  }
+}
+
+@page :right {
+  @top-right {
+    content: string(chapter_title);
+  }
+}
